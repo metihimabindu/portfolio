@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-accent: #7c3aed; /* violet-600 */
+  --color-accent-hover: #6d28d9; /* violet-700 */
+  --color-accent-secondary: #c084fc; /* purple-400 */
+  --color-page-bg: #fdfaff; /* soft lavender tint */
+  --color-text-main: #1e1b4b; /* indigo-950 */
+  --color-text-soft: #475569; /* slate-600 */
+}
+
+@layer base {
+  body {
+    @apply bg-page-bg text-text-main font-sans selection:bg-accent/10 selection:text-accent;
+  }
+}
+
+@utility glass {
+  @apply bg-white/40 backdrop-blur-md border border-violet-200/40 shadow-sm;
+}
+
+@utility glass-card {
+  @apply glass rounded-2xl hover:bg-white/70 hover:shadow-lg hover:shadow-violet-500/5 transition-all duration-300;
+}
+
+@utility text-glow {
+  text-shadow: 0 0 15px rgba(124, 58, 237, 0.1);
+}
